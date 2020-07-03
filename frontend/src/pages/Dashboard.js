@@ -91,7 +91,7 @@ export default function Dashboard(props) {
                                 onChange={e => setProfesion(e.target.value)}
                                 id="profesion"
                                 name="profesion"
-                                value={profesion}
+                                value={context.stateUser.user.usuariobd.profesion}
                                 autoComplete="off"
                             />
                             <Input
@@ -99,7 +99,7 @@ export default function Dashboard(props) {
                                 onChange={e => setDescripcion(e.target.value)}
                                 id="descripcion"
                                 name="descripcion"
-                                value={descripcion}
+                                value={context.stateUser.user.usuariobd.descripcionProfesion}
                                 autoComplete="off"
                             />
                             <Input
@@ -107,7 +107,7 @@ export default function Dashboard(props) {
                                 onChange={e => setCostoPorHora(e.target.value)}
                                 id="costoPorHora"
                                 name="costoPorHora"
-                                value={costoPorHora}
+                                value={context.stateUser.user.usuariobd.precioPorHora}
                                 autoComplete="off"
                             />
                             <br />
