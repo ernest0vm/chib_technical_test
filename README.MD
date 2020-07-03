@@ -193,3 +193,13 @@ Response
 ```
 val baseUrl = "http://<server-ip>:3001/server/"
 ```
+
+## Capturas de pantalla de la aplicacion android
+
+ <table style="border: none;">
+  <tr>
+    <td><img src="https://github.com/ernest0vm/chib_technical_test/blob/master/screenshots/Screenshot_1593796210.png" width="320"></td>
+    <td><img src="https://github.com/ernest0vm/chib_technical_test/blob/master/screenshots/Screenshot_1593796236.png" width="320"></td>
+    <td><img src="https://github.com/ernest0vm/chib_technical_test/blob/master/screenshots/Screenshot_1593796258.png" width="320"></td>
+  </tr>
+ </table>
