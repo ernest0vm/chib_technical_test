@@ -6,14 +6,14 @@ export const Navbar = styled.nav`
     box-sizing: border-box;
     z-index: 3;
     width: 100%;
-    height: 2.77778rem;
+    height: 3.77778rem;
     font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI",
         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol";
     font-size: 0.833333rem;
     font-weight: 500;
     color: white;
-    background: #9f1aff;
+    background: #1E90FF;
     transition: background 300ms ease-out 0s;
     padding: 0px;
 `;
@@ -24,7 +24,7 @@ export const DivNavbar = styled.div`
     align-items: center;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    padding: 0px 1.11111rem;
+    padding: 0px 1.1111rem;
 `;
 export const Wrapper = styled.div`
     display: flex;
@@ -42,7 +42,7 @@ export const NavLinks = styled.nav`
 `;
 export const Alinks = styled.a`
     display: inline-block;
-    line-height: 2.77778rem;
+    line-height: 3.77778rem;
     cursor: pointer;
     letter-spacing: 0.0222222rem;
     color: currentcolor;
@@ -52,11 +52,11 @@ export const Alinks = styled.a`
 `;
 
 export const Button = styled.button`
-    background: #4b0082;
+    background: #4169E1;
     color: white;
     font-size: 1em;
     padding: 0.25em 1em;
-    border: 2px solid #4b0082;
+    border: 2px solid #4169E1;
     border-radius: 3px;
     cursor: pointer;
 `;

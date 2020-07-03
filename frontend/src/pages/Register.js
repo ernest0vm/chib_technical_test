@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
-import { Center, Form, H1, WrappLogin, Input, Button } from "./styles";
+import { Link } from "react-router-dom";
+import { Center, Form, H1, WrappLogin, Input, Button, SecondaryButton } from "./styles";
 import AuthGlobal from "../context/store/AuthGlobal";
 import { registerUser } from "../context/actions/register.action";
 import Error from "../components/Error";
@@ -89,6 +90,8 @@ export default function Register(props) {
                         <br />
 
                         <Button type="submit">Crear cuenta</Button>
+                        <Link to="/login"><SecondaryButton type="button" style={{marginTop:10}}>Regresar</SecondaryButton></Link>
+                    
                         {error ? <Error mensaje={error} /> : null}
                     </WrappLogin>
                 </Form>

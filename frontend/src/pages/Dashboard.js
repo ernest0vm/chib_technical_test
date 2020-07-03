@@ -60,6 +60,29 @@ export default function Dashboard(props) {
             <div>
                 <Header />
                 <Center>
+                    <table style={{marginRigth:30}}>
+                        <tr>
+                            <td>
+                                Nombre: {context.stateUser.user.usuariobd.nombre}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Correo: {context.stateUser.user.usuariobd.correo}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Telefono: {context.stateUser.user.usuariobd.telefono}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Fecha de Nacimiento: {context.stateUser.user.usuariobd.fechaNacimiento}
+                            </td>
+                        </tr>
+                    </table>
+
                     <Form onSubmit={handleSubmit}>
                         <H1>Actualiza tu perfil</H1>
                         <WrappLogin>

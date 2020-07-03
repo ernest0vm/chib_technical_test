@@ -26,10 +26,7 @@ export default function Header() {
                         {context.stateUser.isAuthenticated === true ? (
                             <>
                                 <Alinks>
-                                    {context.stateUser.user.usuariobd.nombre}
-                                </Alinks>
-                                <Alinks>
-                                    {context.stateUser.user.usuariobd.correo}
+                                    Hola, {context.stateUser.user.usuariobd.nombre}
                                 </Alinks>
                             </>
                         ) : null}
