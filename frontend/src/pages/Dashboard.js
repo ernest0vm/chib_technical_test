@@ -1,10 +1,15 @@
 import React, { useContext, useState, useEffect } from "react";
+import { Center, Form, H1, WrappLogin, Input, Button } from "./styles";
 import Header from "../components/Header";
 import AuthGlobal from "../context/store/AuthGlobal";
-import { Table, Tbody, Thead, Td, Th } from './styles'
+import Error from "../components/Error";
 
 export default function Dashboard(props) {
     const context = useContext(AuthGlobal);
+    const [profesion, setProfesion] = useState("");
+    const [descripcion, setDescripcion] = useState("");
+    const [costoPorHora, setCostoPorHora] = useState("");
+    const [error, seterror] = useState("");
     const [showChild, setShowChild] = useState(false);
     const [usuarios, setUsuarios] = useState([])
 
@@ -20,7 +25,7 @@ export default function Dashboard(props) {
         const jwt = localStorage.getItem("jwt");
         if (jwt) {
             fetch("http://localhost:3001/server/usuarios", {
-                method: "GET",
+                method: "PUT",
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
@@ -37,21 +42,58 @@ export default function Dashboard(props) {
         }
     }, [context.stateUser.isAuthenticated, props.history]);
 
+    const handleSubmit = e => {
+        // const user = {
+        //     profesion,
+        //     descripcion,
+        //     costoPorHora,
+        // };
+
+        //updateUser(user, context.dispatch, seterror);
+        e.preventDefault();
+    };
+
     if (!showChild) {
         return null;
     } else {
         return (
             <div>
                 <Header />
-                {usuarios ?
-                    <Table>
-                        <Thead><tr><Th>Nombre</Th><Th>Correo</Th></tr></Thead>
-                        <Tbody>{usuarios.map((usuario, index) => {
-                            return (
-                                <tr key={index}><Td>{usuario.nombre}</Td><Td>{usuario.correo}</Td></tr>
-                            )
-                        })}</Tbody>
-                    </Table> : null}
+                <Center>
+                    <Form onSubmit={handleSubmit}>
+                        <H1>Actualiza tu perfil</H1>
+                        <WrappLogin>
+                            <Input
+                                placeholder="Ingrese su profesion"
+                                onChange={e => setProfesion(e.target.value)}
+                                id="profesion"
+                                name="profesion"
+                                value={profesion}
+                                autoComplete="off"
+                            />
+                            <Input
+                                placeholder="Ingrese la descripcion de tu profesion"
+                                onChange={e => setDescripcion(e.target.value)}
+                                id="descripcion"
+                                name="descripcion"
+                                value={descripcion}
+                                autoComplete="off"
+                            />
+                            <Input
+                                placeholder="¿cual es tu costo por hora de tu trabajo?"
+                                onChange={e => setCostoPorHora(e.target.value)}
+                                id="costoPorHora"
+                                name="costoPorHora"
+                                value={costoPorHora}
+                                autoComplete="off"
+                            />
+                            <br />
+
+                            <Button type="submit">Actualizar Perfil</Button>
+                            {error ? <Error mensaje={error} /> : null}
+                        </WrappLogin>
+                    </Form>
+                </Center>
             </div>
         );
     }
